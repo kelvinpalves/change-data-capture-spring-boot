@@ -1,0 +1,21 @@
+{
+  "name": "pg-app-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "database.hostname": "postgres",
+    "database.port": "5432",
+    "database.user": "debezium",
+    "database.password": "debezium",
+    "database.dbname": "appdb",
+    "topic.prefix": "appserver",
+    "schema.include.list": "public",
+    "table.include.list": "public.orders",
+    "publication.name": "dbz_publication",
+    "publication.autocreate.mode": "disabled",
+    "slot.name": "pg_app_slot",
+    "plugin.name": "pgoutput",
+    "tombstones.on.delete": "false",
+    "decimal.handling.mode": "double",
+    "include.schema.changes": "false"
+  }
+}
